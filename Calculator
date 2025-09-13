@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main(){
+    int a,b;
+    float ans;
+    char c;
+
+    printf("Enter First Number:");
+    scanf("%d",&a);
+    printf("Enter Second Number:");
+    scanf("%d",&b);
+    printf("Enter Operator:");
+    scanf("%s",&c);
+    if(c=='+'){
+        ans = a+b;
+    } else if(c=='-'){
+        ans = a-b;
+    } else if(c=='*'){
+        ans = a*b;
+    } else if(c=='/'){
+        if(b==0){
+            printf("Can't Divide by 0!\n");
+            return 0;
+        } else{
+            ans = (float)a/b;
+        }
+    } else if(c=='%'){
+        ans = a%b;
+    } else{
+        printf("Invalid Operator!\n");
+        return 0;
+    }
+    printf("Answer = %g\n",ans);
+    return 0;
+}
