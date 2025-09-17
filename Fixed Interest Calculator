@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    double p,r,t,ans,n;
+    char a;
+    printf("Enter Principal Amount:");
+    scanf("%lf",&p);
+    printf("Enter rate of interest:");
+    scanf("%lf",&r);
+    printf("Enter time period:");
+    scanf("%lf",&t);
+    printf("Enter type of int.(s = simple,c = compound):");
+    scanf(" %c",&a);
+
+    if(a == 's' || a == 'S'){
+        ans = p+(p*r*t)/100;
+    } else if( a == 'c' || a == 'C'){
+        printf("Enter number of times interest is compounded:");
+        scanf("%lf",&n);
+        ans = p*pow(1+(r/100/n),n*t);
+    } else{
+        printf("Invalid Input!");
+        return 0;
+    }
+    printf("Net Amount = %.2f\n",ans);
+    return 0;
+}
