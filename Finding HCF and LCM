@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int a,b,hcf=1;
+    printf("Enter First Number:");
+    scanf("%d",&a);
+    printf("Enter Second Number:");
+    scanf("%d",&b);
+    int small = a<b?a:b;
+    for(int i=1;i<=small;i++){
+        if(a%i==0){
+            if(b%i==0){
+                hcf = i;
+        }
+        }
+    }
+    printf("HCF of %d and %d is %d\n",a,b,hcf);
+    return 0;
+}
