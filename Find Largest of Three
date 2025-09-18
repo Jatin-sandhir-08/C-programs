@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <limits.h>
+
+int main(){
+    int a,b,c;
+    printf("Enter three numbers:");
+    scanf("%d %d %d",&a,&b,&c);
+    int large = INT_MIN;
+    large = a>b?a:b;
+    large = large>c?large:c;
+    printf("Largest Number is %d\n",large);
+    return 0;
+}
