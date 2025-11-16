@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int count;
+void toh(int n,char l,char m,char r){
+    if(n>=1){
+        toh(n-1,l,r,m);
+        printf("Disc is  moved from %c to %c \n",l,r);
+        count++;
+        toh(n-1,m,l,r);
+    }
+}
+int main(){
+    int n;
+    printf("Enter Number of Disc:");
+    scanf("%d",&n);
+    toh(n,'L','M','R');
+    printf("Total Movements = %d\n",count);
+    return 0;
+}
