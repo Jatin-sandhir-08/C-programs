@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main(){
+    int r,c;
+    printf("Enter Number of Rows:");
+    scanf("%d",&r);
+    printf("Enter Number of Columns:");
+    scanf("%d",&c);
+    int a[r][c];
+    printf("Enter Matrix:\n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+    int minr=0,maxr=r-1,minc=0,maxc=c-1,count=0,total=r*c;
+    /*Techniques:-
+    1. Print min row
+    2. minr++
+    3. Printf max column
+    maxc--
+    4. Print max row(reverse)
+    maxr--
+    5. Print min column(reverse)
+    6. minc++*/
+    while(count<total){
+        for(int j=minc;j<=maxc;j++){
+            printf("%d ",a[minr][j]);
+            count++;
+        }
+        minr++;
+
+        if(count>=total) break;//it is checked again again to prevent printing extra elements
+        for(int i=minr;i<=maxr;i++){
+            printf("%d ",a[i][maxc]);
+            count++;
+        }
+        maxc--;
+
+        if(count>=total) break;
+        for(int j=maxc;j>=minc;j--){
+            printf("%d ",a[maxr][j]);
+            count++;
+        }
+        maxr--;
+
+        if(count>=total) break;
+        for(int i=maxr;i>=minr;i--){
+            printf("%d ",a[i][minc]);
+            count++;
+        }
+        minc++;
+    }  
+    return 0;
+}
